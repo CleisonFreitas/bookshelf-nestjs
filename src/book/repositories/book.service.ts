@@ -8,4 +8,16 @@ export class BookService {
     async store(book:BookEntity) {
         this.books.push(book);
     }
+
+    async fetchAll() {
+        return this.books;
+    }
+
+    async findOne(id: string) {
+        const book = this.books.find(
+            (book) => book.id === id
+        );
+
+        return book;
+    }
 }
